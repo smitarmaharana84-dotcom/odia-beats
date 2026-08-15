@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Odia Beats • Playlist</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#09090d;--card:#15151c;--card2:#1d1b24;--text:#fff;
+  --muted:#aaa7b0;--accent:#ff3150;--accent2:#ff6a3d;
+}
+body{
+  margin:0;background:radial-gradient(circle at 50% 0,#3b0c16 0,#100a0e 30%,var(--bg) 65%);
+  color:var(--text);font-family:Arial,"Noto Sans Oriya",sans-serif;min-height:100vh;
+}
+.page{max-width:760px;margin:auto;padding:16px 14px 150px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.badge{font-size:14px;font-weight:700;color:#ddd}
+.online{display:inline-flex;gap:7px;align-items:center}
+.dot{width:9px;height:9px;border-radius:50%;background:#27e36d;box-shadow:0 0 12px #27e36d}
+.iconbtn{width:42px;height:42px;border:1px solid #ffffff2c;border-radius:50%;background:#ffffff0d;color:white;font-size:20px}
+.hero{text-align:center;padding:45px 10px 24px}
+.logo{font-size:42px;letter-spacing:2px;font-weight:900;margin:0 0 4px}
+.subtitle{font-size:24px;margin:0 0 15px;color:#f4f4f4}
+.desc{color:#d0cdd2;line-height:1.65;font-weight:600;max-width:620px;margin:auto}
+.quote{font-size:20px;line-height:1.7;margin:28px auto 18px;color:#eee}
+.hero-art{
+  height:205px;border-radius:28px;overflow:hidden;position:relative;margin:15px 0 22px;
+  background:linear-gradient(135deg,#8b071a,#e31b37 45%,#6c0819);
+  box-shadow:0 18px 50px #0008;
+}
+.hero-art:before{
+  content:"♫";position:absolute;right:35px;top:8px;font-size:190px;color:#fff1;transform:rotate(10deg)
+}
+.hero-art:after{
+  content:"ODIA";position:absolute;left:25px;bottom:18px;font-size:68px;font-weight:900;color:#fff2;letter-spacing:5px
+}
+.person{
+  position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);
+  font-size:130px;filter:grayscale(1);opacity:.95
+}
+.player{
+  position:sticky;bottom:12px;z-index:10;background:#211117ee;border:1px solid #ffffff20;
+  backdrop-filter:blur(18px);border-radius:28px;padding:12px 14px;box-shadow:0 15px 50px #0009
+}
+.now{display:flex;align-items:center;gap:12px}
+.cover{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#ff3150,#ff8a3d);display:grid;place-items:center;font-size:24px;flex:none}
+.meta{min-width:0;flex:1}
+.title{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.artist{font-size:13px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.controls{display:flex;gap:6px;align-items:center}
+.controls button{border:0;background:transparent;color:white;font-size:22px;padding:8px}
+.play{width:48px;height:48px;border-radius:50%;background:white!important;color:#111!important;font-size:20px!important}
+.progress{height:4px;background:#ffffff20;border-radius:99px;margin:10px 5px 3px;overflow:hidden}
+.bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.time{display:flex;justify-content:space-between;color:#aaa;font-size:11px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:22px 3px 12px}
+.section-title h2{font-size:20px;margin:0}.small{font-size:12px;color:#999}
+.search{width:100%;padding:14px 16px;border-radius:17px;border:1px solid #ffffff16;background:#ffffff0a;color:white;outline:none;font-size:15px;margin-bottom:12px}
+.categories{display:flex;gap:8px;overflow-x:auto;padding:2px 1px 12px;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}
+.cat{white-space:nowrap;border:1px solid #ffffff18;background:#ffffff08;color:#ddd;padding:9px 14px;border-radius:999px;font-weight:700;cursor:pointer}
+.cat.active{background:linear-gradient(90deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
+
+.song{
+ display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;margin:7px 0;background:#ffffff07;
+ border:1px solid transparent;cursor:pointer;transition:.2s
+}
+.song:hover,.song.active{background:#ffffff10;border-color:#ff315044}
+.thumb{width:58px;height:58px;border-radius:15px;background:linear-gradient(135deg,#5c0b18,#e92d48);display:grid;place-items:center;font-size:20px;overflow:hidden;flex:none}.thumb img{width:100%;height:100%;object-fit:cover}
+.songinfo{flex:1;min-width:0}.songname{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.songartist{font-size:12px;color:#9f9ba4;margin-top:4px}
+.more{color:#aaa;font-size:20px}
+.upload{
+  display:block;text-align:center;border:1px dashed #ffffff30;border-radius:18px;padding:15px;color:#ddd;
+  margin-top:15px;background:#ffffff05;cursor:pointer
+}
+.upload input{display:none}
+.footer{text-align:center;color:#777;font-size:12px;margin-top:28px}
+@media(max-width:480px){.logo{font-size:34px}.subtitle{font-size:21px}.quote{font-size:17px}.hero-art{height:185px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <button class="iconbtn" aria-label="menu">☰</button>
+    <div class="online"><span class="dot"></span><span id="online">15 ONLINE</span></div>
+    <div class="badge" id="clock">--:--</div>
+  </div>
+
+  <section class="hero">
+    <h1 class="logo">ODIA BEATS</h1>
+    <p class="subtitle">KI PLAYLIST</p>
+    <p class="desc">ଓଡ଼ିଆ ଗୀତର ଏକ ଛୋଟ non-stop music player — ନିଜର ପସନ୍ଦର ଗୀତ ଯୋଡ଼ନ୍ତୁ, playlist ଚଲାନ୍ତୁ ଏବଂ music enjoy କରନ୍ତୁ।</p>
+    <p class="quote">ଗୀତ ଚାଲୁ ରହୁ, ମନ ଖୁସି ରହୁ ❤️<br>ଆଜିର playlist ଆପଣଙ୍କ ପାଇଁ।</p>
+    <div class="hero-art"><div class="person">🎤</div></div>
+  </section>
+
+  <div class="section-title"><h2>🎵 ଓଡ଼ିଆ Playlist</h2><span class="small" id="count">0 songs</span></div>
+  <input id="search" class="search" placeholder="ଗୀତ ଖୋଜନ୍ତୁ / Search song..." />
+  <div id="audioNote" style="display:none;margin:0 0 12px;padding:12px 14px;border-radius:14px;background:#ff315018;border:1px solid #ff315044;color:#ffd9df;font-size:13px;line-height:1.5">
+    ℹ️ ଏହି sample song ରେ audio file ନାହିଁ। ତଳେ <b>MP3 ଗୀତ ଯୋଡ଼ନ୍ତୁ</b> ଦବାଇ ନିଜର audio file ବାଛନ୍ତୁ।
+  </div>
+
+  <div class="categories" id="categories">
+    <button class="cat active" data-cat="All">All</button>
+    <button class="cat" data-cat="New">🆕 New</button>
+    <button class="cat" data-cat="Sad">💙 Sad</button>
+    <button class="cat" data-cat="Romantic">❤️ Romantic</button>
+    <button class="cat" data-cat="Bhajan">🕉️ Bhajan</button>
+  </div>
+
+  <div id="list"></div>
+
+  <label class="upload">
+    ＋ ନିଜର MP3 ଗୀତ ଯୋଡ଼ନ୍ତୁ
+    <input id="files" type="file" accept="audio/*" multiple>
+  </label>
+
+  <p class="footer">Made for Odia music lovers • Add your own legally obtained audio files.</p>
+
+  <div class="player">
+    <div class="now">
+      <div class="cover">♫</div>
+      <div class="meta">
+        <div class="title" id="nowTitle">ଗୀତ ବାଛନ୍ତୁ</div>
+        <div class="artist" id="nowArtist">Odia Beats</div>
+      </div>
+      <div class="controls">
+        <button id="prev">⏮</button><button id="play" class="play">▶</button><button id="next">⏭</button>
+      </div>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+  </div>
+</div>
+
+<script>
+const starterSongs = [
+  {name:"Odia Beats Demo", artist:"Player Test • Original Demo", category:"New", cover:"cover-new.svg", url:"player-test.wav"},
+  {name:"Tuma Pain Mu", artist:"Odia Romantic", category:"Romantic", cover:"cover-romantic.svg"},
+  {name:"Eka Eka Mu", artist:"Odia Sad Songs", category:"Sad", cover:"cover-sad.svg"},
+  {name:"He Jagannatha", artist:"Odia Bhajan", category:"Bhajan", cover:"cover-bhajan.svg"},
+  {name:"To Hasa Mo Khusi", artist:"Odia Melody", category:"Romantic", cover:"cover-romantic.svg"},
+  {name:"Mana Mora Udi Jaye", artist:"Odia New", category:"New", cover:"cover-new.svg"},
+  {name:"Aji Kain Ete Mana", artist:"Odia Sad", category:"Sad", cover:"cover-sad.svg"},
+  {name:"Jaya Jagannatha", artist:"Odia Bhakti", category:"Bhajan", cover:"cover-bhajan.svg"}
+];
+const songs = starterSongs.map(s=>({...s,url:""}));
+let current=-1, audio=new Audio(), filtered=[], activeCategory="All";
+const list=document.getElementById('list'), search=document.getElementById('search');
+
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function render(){
+  const q=search.value.toLowerCase();
+  filtered=songs.map((s,i)=>({...s,i})).filter(s=>
+    (activeCategory==="All"||s.category===activeCategory) &&
+    (s.name+" "+s.artist).toLowerCase().includes(q)
+  );
+  document.getElementById('count').textContent=songs.length+" songs";
+  list.innerHTML=filtered.length?filtered.map(s=>`
+    <div class="song ${s.i===current?'active':''}" onclick="selectSong(${s.i})">
+      <div class="thumb"><img src="${esc(s.cover)}" alt=""></div>
+      <div class="songinfo"><div class="songname">${esc(s.name)}</div><div class="songartist">${esc(s.artist)} • ${esc(s.category)}</div></div>
+      <div class="more">⋮</div>
+    </div>`).join(''):`<div style="text-align:center;color:#888;padding:30px">କୌଣସି ଗୀତ ମିଳିଲା ନାହିଁ</div>`;
+}
+function selectSong(i,autoplay=true){
+  current=i; const s=songs[i]; if(!s)return;
+  document.getElementById('nowTitle').textContent=s.name;
+  document.getElementById('nowArtist').textContent=s.artist;
+  render();
+  const note=document.getElementById('audioNote');
+  if(!s.url){
+    document.getElementById('nowArtist').textContent=s.artist+" • MP3 ଯୋଡ଼ନ୍ତୁ";
+    note.style.display='block';
+    updatePlay();
+    return;
+  }
+  note.style.display='none';
+  audio.src=s.url;
+  if(autoplay) audio.play().then(()=>updatePlay()).catch(()=>{});
+}
+function updatePlay(){document.getElementById('play').textContent=audio.paused?'▶':'❚❚'}
+document.getElementById('play').onclick=()=>{
+ if(current<0&&songs.length) selectSong(0);
+ else if(current>=0&&!songs[current].url) document.getElementById('files').click();
+ else if(audio.paused) audio.play(); else audio.pause();
+ updatePlay();
+};
+document.getElementById('prev').onclick=()=>{if(!songs.length)return;selectSong((current-1+songs.length)%songs.length)}
+document.getElementById('next').onclick=()=>{if(!songs.length)return;selectSong((current+1)%songs.length)}
+audio.addEventListener('play',updatePlay); audio.addEventListener('pause',updatePlay);
+audio.addEventListener('ended',()=>{if(songs.length)selectSong((current+1)%songs.length)});
+audio.addEventListener('loadedmetadata',()=>document.getElementById('dur').textContent=fmt(audio.duration));
+audio.addEventListener('timeupdate',()=>{
+ document.getElementById('cur').textContent=fmt(audio.currentTime);
+ document.getElementById('bar').style.width=(audio.duration?audio.currentTime/audio.duration*100:0)+'%';
+});
+document.querySelector('.progress').onclick=e=>{
+ if(audio.duration){const r=e.currentTarget.getBoundingClientRect();audio.currentTime=(e.clientX-r.left)/r.width*audio.duration}
+};
+function fmt(t){if(!isFinite(t))return'0:00';return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0')}
+search.oninput=render;
+document.querySelectorAll('.cat').forEach(btn=>btn.onclick=()=>{
+ activeCategory=btn.dataset.cat;
+ document.querySelectorAll('.cat').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active'); render();
+});
+document.getElementById('files').onchange=e=>{
+ [...e.target.files].forEach(f=>{
+   songs.push({name:f.name.replace(/\.[^/.]+$/,''),artist:'Your Odia Playlist',category:'New',cover:'cover-new.svg',url:URL.createObjectURL(f)});
+ });
+ render();
+ if(current<0&&songs.length)selectSong(0,false);
+};
+function clock(){
+ const d=new Date();document.getElementById('clock').textContent=d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+}
+clock();setInterval(clock,1000);
+render();
+</script>
+</body>
+</html>
