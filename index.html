@@ -147,7 +147,7 @@ const starterSongs = [
   {name:"Aji Kain Ete Mana", artist:"Odia Sad", category:"Sad", cover:"cover-sad.svg"},
   {name:"Jaya Jagannatha", artist:"Odia Bhakti", category:"Bhajan", cover:"cover-bhajan.svg"}
 ];
-const songs = starterSongs.map(s=>({...s,url:""}));
+  const songs = starterSongs.map(s=>({...s}));
 let current=-1, audio=new Audio(), filtered=[], activeCategory="All";
 const list=document.getElementById('list'), search=document.getElementById('search');
 
